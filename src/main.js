@@ -97,10 +97,18 @@ const download = () => {
 	element.setAttribute('download', 'harmonograph.svg');
 	element.style.display = 'none';
 	document.body.appendChild(element);
-	element.click();
-	document.body.removeChild(element);
+	setTimeout(() => {
+		element.click();
+		setTimeout(() => {
+			document.body.removeChild(element);
+		}, 10);
+	}, 10);
 };
 
 const obj = { redraw: drawHarmonograph, download };
 gui.add(obj, 'redraw');
 gui.add(obj, 'download');
+
+window.addEventListener('keydown', e => {
+	if (e.keyCode === 82) drawHarmonograph();
+});
