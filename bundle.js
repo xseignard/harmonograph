@@ -169,7 +169,6 @@ var download = function download() {
 };
 
 var obj = { redraw: drawHarmonograph, download: download };
-console.log(obj);
 gui.add(obj, 'redraw');
 gui.add(obj, 'download');
 
