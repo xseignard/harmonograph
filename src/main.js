@@ -12,25 +12,25 @@ ctx.lineWidth = 0.1;
 ctx.fillStyle = '#fff';
 ctx.strokeStyle = '#000';
 
-let first = {
+const first = {
 	amplitude: 150,
 	frequency: 2.01,
 	phase: 0,
 	delta: 0.0085,
 };
-let second = {
+const second = {
 	amplitude: 150,
 	frequency: 3,
 	phase: Math.PI * 7 / 16,
 	delta: 0,
 };
-let third = {
+const third = {
 	amplitude: 150,
 	frequency: 3,
 	phase: 0,
 	delta: 0.065,
 };
-let fourth = {
+const fourth = {
 	amplitude: 150,
 	frequency: 2,
 	phase: 0,
@@ -102,6 +102,5 @@ const download = () => {
 };
 
 const obj = { redraw: drawHarmonograph, download };
-console.log(obj);
 gui.add(obj, 'redraw');
 gui.add(obj, 'download');
