@@ -164,13 +164,21 @@ var download = function download() {
 	element.setAttribute('download', 'harmonograph.svg');
 	element.style.display = 'none';
 	document.body.appendChild(element);
-	element.click();
-	document.body.removeChild(element);
+	setTimeout(function () {
+		element.click();
+		setTimeout(function () {
+			document.body.removeChild(element);
+		}, 10);
+	}, 10);
 };
 
 var obj = { redraw: drawHarmonograph, download: download };
 gui.add(obj, 'redraw');
 gui.add(obj, 'download');
+
+window.addEventListener('keydown', function (e) {
+	if (e.keyCode === 82) drawHarmonograph();
+});
 
 /***/ }),
 /* 1 */
