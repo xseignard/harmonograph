@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+}
+
+.container {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+svg {
+	border: 1px solid black;
+}
